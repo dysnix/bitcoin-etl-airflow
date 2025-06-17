@@ -32,7 +32,7 @@ def read_load_dag_vars(var_prefix, **kwargs):
         'load_all_partitions': parse_bool(read_var('load_all_partitions', var_prefix, True, **kwargs))
     }
 
-    load_start_date = read_var('load_start_date', var_prefix, False, **kwargs)
+    load_start_date = read_var('load_start_date', var_prefix, True, **kwargs)
     if load_start_date is not None:
         load_start_date = datetime.strptime(load_start_date, '%Y-%m-%d')
         vars['load_start_date'] = load_start_date
